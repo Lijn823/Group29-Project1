@@ -222,7 +222,7 @@ start_point <- sample(a_no_punct,size=1)
 # Use the single word selected randomly to start simulate from the model until a full stop is reached
 key <- start_point
 
-max_length <- 100 # set a ending point in case it never reaches a full stop
+max_length <- 1000 # set a ending point in case it never reaches a full stop
 start_token <- match(key, b) # find the start point's token
 gen_tokens <- c(start_token) # initiate a vector to store the start point's token the the tokens generated from our model
 
@@ -254,15 +254,16 @@ if(length(punct_indices) > 0) { # in case next line does not return anything
 } # otherwise, when there is no punctuation mark generated, we just use the first pasted version
 
 
-# Compare our model with randomly selected words from the common words vector
-next_words <- c() # initiate a vector to store words selected randomly from the common words vector
+# Compare our model with randomly selected common words from the text
+a_common <- a[a %in% b] # create a text vector with all uncommon words removed
+next_words <- c() # initiate a vector to store common words selected randomly from the text
 new_word <- "" # initiate a new_word to start the loop
 
 for (i in 1:max_length) {
   if(new_word == ".") {
     break # run until the new sampled word is a full stop
   }
-  new_word <- sample(b, size = 1) # sample a word randomly from common words vector as new_word
+  new_word <- sample(a_common, size = 1) # sample a common word randomly from the text as new_word
   next_words <- c(next_words, new_word) # add it to the next_word vector
 }
 # completing this loop, randomly selected words are all stored in the next_words vector
