@@ -28,7 +28,7 @@
 
 
 # read file into R, skipping the start and the end
-setwd('/Users/jianingli/Documents/留学/学业-爱丁堡大学/Extended Statistical Programming/个人代码/小组作业/practical-1')
+# setwd('/Users/jianingli/Documents/留学/学业-爱丁堡大学/Extended Statistical Programming/个人代码/小组作业/practical-1')
 a <- scan("shakespeare.txt",what="character",skip=83,nlines=196043-83,fileEncoding="UTF-8")
 # print the first and last 10 words to see what is in a
 head(a, 10)
