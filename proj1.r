@@ -2,9 +2,9 @@
 
 # Group Members: Jianing Li (s2819183); Ruotong Yang (s2808509); Hao Jiang (s2694843)
 # Contributions: 
-  # Jianing Li: Data cleaning (except splitting punctuation marks), a version of the main model function, code integration and consolidation
-  # Hao Jiang: The punctuation marks splitting function, a version of the main model function, function testing
-  # Ruotong Yang: The common words vector, the matrix M, a version of the main model function
+  # Jianing Li (1/3): Data cleaning (except splitting punctuation marks), a version of the main model function, code integration and consolidation
+  # Hao Jiang (1/3): The punctuation marks splitting function, a version of the main model function, function testing
+  # Ruotong Yang (1/3): The common words vector, the matrix M, a version of the main model function
 
 
 # In this file, we are coding up a 'small language model' to simulate sentences resembling those written by Shakespeare.
@@ -187,7 +187,7 @@ next.word <- function(key, M, M1=match(a,b), w=rep(1,ncol(M)-1)){
         result <- u
         n_u <- length(u) # the number of words in our result
         result_prob <- rep(w[m]/n_u, n_u) # compute the probabilities for this round
-        # in each round, the matched words share the total probability(defaults to 1) of that round
+        # in each round, the matched words share the total probability (defaults to 1) of that round
         # probability is distributed proportionally to match frequencies
         
         results <- c(results, result) # put it in the results vector
